@@ -1,0 +1,28 @@
+name: 'Send Mail using Mailjet'
+description: 'A GitHub Action to send emails using Mailjet API.'
+author: 'Coumarane COUPPANE'
+inputs:
+  api_key:
+    description: 'Mailjet API Key'
+    required: true
+  api_secret:
+    description: 'Mailjet API Secret Key'
+    required: true
+  from_email:
+    description: 'Sender email address'
+    required: true
+  to_email:
+    description: 'Recipient email address'
+    required: true
+  subject:
+    description: 'Email subject'
+    required: true
+  message:
+    description: 'Email message body'
+    required: true
+runs:
+  using: 'node16'
+  main: 'index.js'
+branding:
+  color: 'blue'
+  icon: 'mail'
