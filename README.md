@@ -5,12 +5,12 @@
 1. Set up environment variables to simulate inputs:
 
 ```bash
-export INPUT_API_KEY='your-mailjet-api-key'
-export INPUT_API_SECRET='your-mailjet-api-secret'
-export INPUT_FROM_EMAIL='c.coumarane@gmail.com'
-export INPUT_TO_EMAIL='c.coumarane@gmail.com'
-export INPUT_SUBJECT='Test Email'
-export INPUT_MESSAGE='This is a test email from Mailjet!'
+export MAILJET_API_KEY='your-mailjet-api-key'
+export MAILJET_API_SECRET='your-mailjet-api-secret'
+export MAILJET_FROM_EMAIL='c.coumarane@gmail.com'
+export MAILJET_TO_EMAIL='c.coumarane@gmail.com'
+export MAILJET_SUBJECT='Test Email'
+export MAILJET_MESSAGE='This is a test email from Mailjet!'
 ```
 
 2. Run the script:
@@ -35,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Use Send Mail Action
-        uses: your-username/send-mail-action@v1
+        uses: coumarane/send-mail-action@v1
         with:
           api_key: ${{ secrets.MAILJET_API_KEY }}
           api_secret: ${{ secrets.MAILJET_API_SECRET }}

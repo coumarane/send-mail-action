@@ -1,0 +1,20 @@
+name: Send Mail using Mailjet
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  send_email:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use Send Mail Action
+        uses: coumarane/send-mail-action@v1
+        with:
+          api_key: ${{ secrets.MAILJET_API_KEY }}
+          api_secret: ${{ secrets.MAILJET_API_SECRET }}
+          from_email: 'c.coumarane@gmail.com'
+          to_email: 'c.coumarane@gmail.com'
+          subject: 'Hello from GitHub Actions'
+          message: 'This is a test email sent via Mailjet!'
