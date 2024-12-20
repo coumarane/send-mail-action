@@ -14,7 +14,6 @@ export INPUT_MESSAGE='This is a test email from Mailjet!'
 ```
 
 2. Run the script:
-3. 
 ```bash
 node index.js
 ```
