@@ -1,4 +1,5 @@
 const core = require('@actions/core');
+const fs = require('fs');
 const Mailjet = require('node-mailjet');
 
 async function run() {
@@ -9,12 +10,27 @@ async function run() {
         const toEmail = core.getInput('to_email');
         const subject = core.getInput('subject');
         const message = core.getInput('message');
+        const attachmentPath = core.getInput('attachment_path'); // Optional attachment
 
         // Initialize Mailjet client
         const mailjet = new Mailjet({
             apiKey: apiKey,
             apiSecret: apiSecret,
         });
+
+        // Prepare attachments if provided
+        let attachments = [];
+        if (attachmentPath) {
+            const fileName = attachmentPath.split('/').pop(); // Extract file name
+            const fileData = fs.readFileSync(attachmentPath); // Read file data
+            const base64Data = fileData.toString('base64'); // Convert to Base64
+
+            attachments.push({
+                ContentType: 'application/octet-stream', // Adjust content type if needed
+                Filename: fileName,
+                Base64Content: base64Data,
+            });
+        }
 
         // Prepare the request
         const request = {
@@ -30,6 +46,7 @@ async function run() {
                     ],
                     Subject: subject,
                     TextPart: message,
+                    Attachments: attachments, // Add attachments
                 },
             ],
         };
