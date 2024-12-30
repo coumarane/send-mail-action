@@ -50,7 +50,7 @@ jobs:
     environment: dev # Reference the environment name here
     steps:
       - name: Use Send Mail Action
-        uses: coumarane/send-mail-action@v1.1.1
+        uses: coumarane/send-mail-action@v1.1.2
         with:
           api_key: ${{ secrets.MAILJET_API_KEY }}
           api_secret: ${{ secrets.MAILJET_API_SECRET }}
