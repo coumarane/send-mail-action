@@ -5,13 +5,15 @@
 1. Set up environment variables to simulate inputs:
 
 ```bash
-export MAILJET_API_KEY='your-mailjet-api-key'
-export MAILJET_API_SECRET='your-mailjet-api-secret'
-export MAILJET_FROM_EMAIL='c.coumarane@gmail.com'
-export MAILJET_TO_EMAIL='c.coumarane@gmail.com'
-export MAILJET_SUBJECT='Test Email'
-export MAILJET_MESSAGE='This is a test email from Mailjet!'
+export INPUT_API_KEY='your-mailjet-api-key'
+export INPUT_API_SECRET='your-mailjet-api-secret'
+export INPUT_FROM_EMAIL='c.coumarane@gmail.com'
+export INPUT_TO_EMAIL='c.coumarane@gmail.com'
+export INPUT_SUBJECT='Test Email'
+export INPUT_MESSAGE='This is a test email from Mailjet!'
 ```
+
+*Note*: By default, the @actions/core library looks for inputs in the form of `INPUT_<input_name>` in the environment variables.
 
 2. Run the script:
 ```bash
