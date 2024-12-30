@@ -37,7 +37,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Use Send Mail Action
-        uses: coumarane/send-mail-action@v1
+        uses: coumarane/send-mail-action@v1.1.0
         with:
           api_key: ${{ secrets.MAILJET_API_KEY }}
           api_secret: ${{ secrets.MAILJET_API_SECRET }}
