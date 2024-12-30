@@ -8,6 +8,7 @@ on:
 jobs:
   send_email:
     runs-on: ubuntu-latest
+    environment: dev
     steps:
       - name: Use Send Mail Action
         uses: coumarane/send-mail-action@v1.1.1
